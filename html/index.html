@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Walking Dead - Inicio</title>
+  <link rel="stylesheet" href="../css/estilos.css"/>
+</head>
+<body>
+  <!-- Preferencias de tema aplican antes para evitar flash -->
+  <script>
+    (() => {
+      const saved = localStorage.getItem('twd-theme');
+      if (saved === 'light') document.documentElement.classList.add('theme-light');
+    })();
+  </script>
+
+  <header>
+    <div class="logo">
+      <img src="img/logo.png" alt="Logo The Walking Dead" />
+    </div>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="index.html" aria-current="page">Inicio</a></li>
+        <li><a href="temporadas.html">Temporadas</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema">
+      <span class="toggle-icon" aria-hidden="true">🌓</span>
+    </button>
+  </header>
+
+  <!-- HERO con video de fondo -->
+  <section class="hero">
+    <video class="hero-video" src="img/hero.mp4" autoplay muted loop playsinline></video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Sobrevive. Resiste. Lidera.</h1>
+      <p>La fan page definitiva del universo The Walking Dead</p>
+      <div class="hero-ctas">
+        <a href="#proximo" class="btn btn-primary">Próximo estreno</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTADOR -->
+  <section id="proximo" class="countdown-section">
+    <h2>Cuenta regresiva</h2>
+    <p class="countdown-sub">Faltan para el próximo gran evento del universo TWD:</p>
+    <div class="countdown" role="timer" aria-live="polite">
+      <div class="cd-box"><span id="cd-days">00</span><small>días</small></div>
+      <div class="cd-box"><span id="cd-hours">00</span><small>horas</small></div>
+      <div class="cd-box"><span id="cd-mins">00</span><small>min</small></div>
+      <div class="cd-box"><span id="cd-secs">00</span><small>seg</small></div>
+    </div>
+  </section>
+
+  <!-- INTRO + IMAGEN (mantengo tu estructura de columnas) -->
+  <main class="main-content">
+    <div class="column-left">
+      <h1>The Walking Dead</h1>
+      <p>The Walking Dead es una serie de televisión de horror post-apocalíptico basada en el cómic de Robert Kirkman, Tony Moore y Charlie Adlard. Seguimos a sobrevivientes enfrentando “caminantes” y peor a otros humanos y sus nuevas reglas.</p>
+      <p>La serie se estrenó el 31 de octubre de 2010 en AMC y culminó con su undécima temporada en 2022. El universo se expande con múltiples spin-offs y eventos que seguimos día a día desde esta fan page.</p>
+
+      <div class="cta-inline">
+        <a class="btn btn-primary" href="temporadas.html">Explorar Universo</a>
+        <a class="btn btn-ghost" href="galeria.html">Ver Galería</a>
+      </div>
+    </div>
+    <div class="column-right">
+      <img src="img/the-walking-dead-home.jpg" alt="Arte promocional de The Walking Dead" />
+    </div>
+  </main>
+
+  <!-- TIMELINE de hitos -->
+  <section class="timeline-section">
+    <h2>Hitos del universo TWD</h2>
+    <div class="timeline" id="timeline">
+      <article class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <h3>2010 · Nace la serie</h3>
+          <p>AMC estrena The Walking Dead (Temporada 1). Comienza la odisea de Rick Grimes.</p>
+        </div>
+      </article>
+
+      <article class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <h3>2015 · Fear the Walking Dead</h3>
+          <p>Spin-off que explora el inicio del brote en la costa oeste.</p>
+        </div>
+      </article>
+
+      <article class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <h3>2020 · World Beyond</h3>
+          <p>Una nueva generación crecida entre caminantes descubre el mundo exterior.</p>
+        </div>
+      </article>
+
+      <article class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <h3>2023 · Dead City & Daryl Dixon</h3>
+          <p>Nuevas aventuras en Manhattan con Maggie/Negan y en Europa con Daryl.</p>
+        </div>
+      </article>
+
+      <article class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <h3>2024 · The Ones Who Live</h3>
+          <p>Reencuentro esperado: el capítulo de Rick y Michonne.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 The Walking Dead Fan Site. Todos los derechos reservados.</p>
+    <div class="social-icons">
+      <a href="#" aria-label="X">X</a>
+      <a href="#" aria-label="Instagram">Instagram</a>
+      <a href="#" aria-label="Facebook">Facebook</a>
+      <a href="#" aria-label="YouTube">YouTube</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

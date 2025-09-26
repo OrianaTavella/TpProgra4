@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fear the Walking Dead - The Walking Dead Fan Site</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <script>
+        (() => {
+            const saved = localStorage.getItem('twd-theme');
+            if (saved === 'light') document.documentElement.classList.add('theme-light');
+        })();
+    </script>
+
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo The Walking Dead">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="temporadas.html" aria-current="page">Temporadas</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema"><span>🌓</span></button>
+    </header>
+
+    <main class="main-content">
+        <section class="serie-detail-section">
+            <h1>Fear the Walking Dead</h1>
+            <img src="css/portadas/Fear the Walking Dead.jpg" alt="Fear the Walking Dead" style="max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 1rem;">
+            <div class="seasons-details" style="display: block;">
+                <h4>Temporadas</h4>
+                <ul>
+                    <li><h5>T1</h5><p>Una familia de Los Ángeles enfrenta el inicio del apocalipsis zombi.</p></li>
+                    <li><h5>T2</h5><p>El grupo escapa por mar a bordo del yate "Abigail", pero no hay lugar seguro.</p></li>
+                    <li><h5>T3</h5><p>Los supervivientes encuentran refugio en un rancho fronterizo, pero se ven envueltos en un violento conflicto.</p></li>
+                    <li><h5>T4</h5><p>Un salto temporal y un crossover con Morgan Jones. El grupo se encuentra en un estadio, pero una nueva amenaza los destruye.</p></li>
+                    <li><h5>T5</h5><p>El grupo, ahora liderado por Morgan, se embarca en una misión para ayudar a otros.</p></li>
+                    <li><h5>T6</h5><p>Separados y subyugados por los Pioneros, el grupo lucha por reunirse mientras una nueva amenaza de un culto apocalíptico emerge.</p></li>
+                    <li><h5>T7</h5><p>Tras una explosión nuclear, los supervivientes se enfrentan a un paisaje radiactivo y a un nuevo conflicto entre Morgan y Strand.</p></li>
+                    <li><h5>T8</h5><p>En la temporada final, un salto temporal de siete años nos lleva a PADRE, una organización que separa a los niños de sus padres.</p></li>
+                </ul>
+            </div>
+            <a href="temporadas.html" class="btn btn-ghost" style="margin-top: 2rem;">&larr; Volver a Todas las Series</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 The Walking Dead Fan Site. Todos los derechos reservados.</p>
+        <div class="social-icons">
+            <a href="#" aria-label="X">X</a>
+            <a href="#" aria-label="Instagram">Instagram</a>
+            <a href="#" aria-label="Facebook">Facebook</a>
+            <a href="#" aria-label="YouTube">YouTube</a>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+</body>
+</html>

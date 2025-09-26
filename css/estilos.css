@@ -1,0 +1,402 @@
+/* ===== FONT IMPORT ===== */
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+/* ===== RESET Y VARIABLES ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #141414;
+  --text: #fff;
+  --muted: #ccc;
+  --card: #222;
+  --border: #333;
+  --primary: #d32f2f;
+  --primary-700: #9a0007;
+  --elev: rgba(0,0,0,.5);
+}
+
+.theme-light {
+  --bg: #f6f7f9;
+  --text: #101114;
+  --muted: #3a3b3f;
+  --card: #fff;
+  --border: #e5e7eb;
+  --elev: rgba(0,0,0,.06);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a { color: var(--text); text-decoration: none; }
+
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #000;
+  border-bottom: 1px solid var(--border);
+}
+.theme-light header { background-color: #fff; }
+
+.logo img { max-height: 50px; }
+
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 20px; }
+nav ul li a {
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+nav ul li a:hover { color: var(--primary); }
+
+/* Botón toggle tema */
+.theme-toggle {
+  margin-left: 16px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform .2s ease, background .3s ease, border-color .3s ease;
+}
+.theme-toggle:hover { transform: translateY(-1px); }
+
+/* ===== BOTONES ===== */
+.btn {
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:8px;
+  font-weight:700;
+  text-decoration:none;
+  border:1px solid transparent;
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: var(--primary); color:#fff; }
+.btn-primary:hover { background: var(--primary-700); }
+.btn-outline { background: transparent; border-color: var(--border); color: var(--text); }
+.btn-outline:hover { background: rgba(255,255,255,.06); }
+.btn-ghost { background: transparent; color: var(--text); border-color: transparent; }
+.btn-ghost:hover { background: rgba(255,255,255,.06); }
+
+/* ===== HOME - HERO ===== */
+.hero {
+  position:relative; height:min(72vh, 820px);
+  display:grid; place-items:center; overflow:hidden;
+  border-bottom:1px solid var(--border);
+}
+.hero-video {
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover;
+  filter:contrast(1.05) saturate(1.1) brightness(.75);
+}
+.theme-light .hero-video { filter: contrast(1.05) saturate(1.05) brightness(.9); }
+.hero-overlay { position:absolute; inset:0; background: radial-gradient(ellipse at center, rgba(0,0,0,.25), rgba(0,0,0,.65)); }
+.hero-content {
+  position:relative; z-index:2; text-align:center;
+  padding: 0 24px; max-width: 900px;
+}
+.hero h1 { font-size: clamp(2rem, 4vw + .5rem, 4rem); margin-bottom:12px; }
+.hero p { color: var(--muted); margin-bottom: 22px; }
+.hero-ctas { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+
+/* ===== HOME - COUNTDOWN ===== */
+.countdown-section { padding:48px 40px; text-align:center; }
+.countdown-section h2 { color: var(--primary); margin-bottom:6px; font-size:2rem; }
+.countdown-sub { color: var(--muted); margin-bottom:20px; }
+.countdown { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+.cd-box {
+  background: var(--card); border:1px solid var(--border);
+  padding:16px 18px; border-radius:10px; min-width:95px;
+  box-shadow: 0 10px 24px var(--elev);
+}
+.cd-box span { display:block; font-size:2rem; font-weight:800; }
+.cd-box small { color: var(--muted); }
+
+/* ===== HOME - TIMELINE ===== */
+.timeline-section { padding: 56px 40px; }
+.timeline-section h2 { text-align:left; font-size:2rem; color: var(--primary); margin-bottom: 28px; }
+.timeline {
+  position: relative; max-width: 960px; margin: 0 auto; padding-left: 18px;
+}
+.timeline::before {
+  content:''; position:absolute; left: 14px; top:0; bottom:0; width:2px; background: var(--border);
+}
+.tl-item { position: relative; margin-bottom: 26px; }
+.tl-dot {
+  position:absolute; left:-2px; top:10px;
+  width:12px; height:12px; border-radius:50%;
+  background: var(--primary);
+}
+.tl-card {
+  margin-left: 26px; background: var(--card);
+  border:1px solid var(--border); border-radius:10px; padding:16px;
+}
+.tl-card h3 { margin:0 0 6px; }
+.tl-card p { margin:0; color: var(--muted); }
+
+/* ===== MAIN CONTENT (intro 2 columnas) ===== */
+.main-content {
+  display: flex;
+  padding: 40px;
+  gap: 40px;
+}
+.column-left, .column-right { flex: 1; }
+.column-left h1 { font-size: 2.5em; margin-bottom: 20px; color: var(--primary); }
+.column-left p { margin-bottom: 15px; }
+.column-right img { width: 100%; border-radius: 8px; }
+
+/* ===== TEMPORADAS (flip-cards) ===== */
+.series-section { padding: 40px; text-align: left; }
+.series-section h2, .gallery-section h2 {
+    font-family: 'Arial', cursive;
+    font-size: 3.5em;
+    margin-bottom: 30px;
+    color: var(--text);
+    transition: color 0.3s ease;
+}
+.series-section h2:hover, .gallery-section h2:hover {
+    color: var(--primary);
+}
+
+.series-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.serie-card {
+  perspective: 1000px;
+  cursor: pointer;
+  border-radius: 8px;
+  background: var(--card);
+  overflow: hidden; /* Add this to contain the children */
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 350px; /* Fixed height for the flipper */
+  transition: transform .8s;
+  transform-style: preserve-3d;
+}
+.serie-card.flipped .card-inner { transform: rotateY(180deg); }
+.card-front, .card-back {
+  position: absolute; inset: 0; backface-visibility: hidden;
+  border-radius: 8px; overflow: hidden;
+  background: var(--card); display:flex; flex-direction:column; align-items:flex-start; justify-content:flex-start;
+  padding: 12px; text-align:left;
+}
+.card-front img {
+  width: 100%; height: 250px; object-fit: cover; margin-bottom: 10px;
+}
+.card-back { 
+    transform: rotateY(180deg); 
+    padding: 20px; 
+    color: var(--text); 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-buttons {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-top: 15px;
+    text-align: left
+}
+
+.filter-bar .btn.active {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.seasons-details {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+    text-align: left;
+}
+
+.serie-card.show-seasons .seasons-details {
+    max-height: 350px;
+    padding: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.seasons-details h4 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.seasons-details ul {
+    list-style: none;
+    padding: 0;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.seasons-details li {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+.seasons-details li:last-child {
+    border-bottom: none;
+}
+
+.seasons-details h5 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.seasons-details p {
+    font-size: 0.9em;
+    color: var(--muted);
+}
+
+
+/* ===== GALERÍA ===== */
+.gallery-section { padding: 40px; text-align: left; }
+.filter-bar { margin-bottom: 20px; }
+.gallery-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+.gallery-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.gallery-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(211,47,47,0.7);
+}
+
+/* ===== CONTACTO ===== */
+.contact-main {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+.contact-section, .map-section {
+  flex: 1;
+  background: var(--card);
+  padding: 20px;
+  border-radius: 10px;
+}
+.contact-container h2, .map-section h2 {
+  margin-bottom: 10px;
+  color: var(--primary);
+}
+.contact-form .form-group {
+  margin-bottom: 15px;
+  display:flex; flex-direction:column;
+}
+.contact-form label { margin-bottom: 5px; font-weight: bold; }
+.contact-form input, .contact-form select, .contact-form textarea {
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--bg);
+  color: var(--text);
+}
+.submit-btn {
+  background: var(--primary);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.submit-btn:hover { background: var(--primary-700); }
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: #000;
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid var(--border);
+}
+.theme-light footer { background: #fff; }
+.social-icons { margin-top: 10px; }
+.social-icons a { margin: 0 10px; font-size: 1.2em; }
+
+/* ===== LIGHTBOX ===== */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.lightbox-image {
+    max-width: 90vw;
+    max-height: 80vh;
+    border-radius: 8px;
+}
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.lightbox-close:hover {
+    color: #d32f2f;
+}
+.lightbox-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    transition: color 0.3s ease;
+    user-select: none;
+}
+.lightbox-arrow:hover {
+    color: #d32f2f;
+}
+.lightbox-prev {
+    left: 20px;
+}
+.lightbox-next {
+    right: 20px;
+}
+.lightbox-slide {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: 1px solid #555;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  header { flex-direction: column; }
+  nav ul { flex-direction: column; align-items: flex-end; }
+  .main-content, .contact-main { flex-direction: column; }
+}
