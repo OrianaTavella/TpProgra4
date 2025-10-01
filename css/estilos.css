@@ -261,6 +261,48 @@ nav ul li a:hover { color: var(--primary); }
     color: var(--muted);
 }
 
+/* ===== PÁGINAS DE DETALLE DE SERIE ===== */
+.serie-detail-section {
+    padding: 40px;
+}
+.serie-detail-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.serie-detail-img {
+    flex-basis: 300px; /* Ancho base de la imagen */
+    flex-shrink: 0;
+}
+.serie-detail-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+.serie-detail-content {
+    flex: 1;
+}
+.serie-detail-content h1 {
+    font-size: 2.5em;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+.serie-meta {
+    font-size: 1.1em;
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+.seasons-list {
+    list-style: none;
+    padding: 0;
+}
+.seasons-list li {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+}
+.seasons-list li:last-child { border-bottom: none; }
 
 /* ===== GALERÍA ===== */
 .gallery-section { padding: 40px; text-align: left; }
@@ -398,5 +440,12 @@ footer {
 @media (max-width: 768px) {
   header { flex-direction: column; }
   nav ul { flex-direction: column; align-items: flex-end; }
-  .main-content, .contact-main { flex-direction: column; }
+  .main-content, .contact-main, .serie-detail-container { flex-direction: column; }
+}
+
+/* Estilos para layout de 2 columnas en escritorio para detalle de serie */
+@media (min-width: 769px) {
+    .serie-detail-container {
+        flex-direction: row;
+    }
 }

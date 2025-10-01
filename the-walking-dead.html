@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Walking Dead - The Walking Dead Fan Site</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <script>
+        (() => {
+            const saved = localStorage.getItem('twd-theme');
+            if (saved === 'light') document.documentElement.classList.add('theme-light');
+        })();
+    </script>
+
+    <header>
+        <div class="logo">
+            <img src="css/img/logo.png" alt="Logo The Walking Dead">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="temporadas.html" aria-current="page">Temporadas</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema"><span>🌓</span></button>
+    </header>
+
+    <main class="main-content">
+        <section class="serie-detail-section">
+            <div class="serie-detail-container">
+                <div class="serie-detail-img">
+                    <img src="css/img/The Walking Dead Portada.avif" alt="The Walking Dead">
+                </div>
+                <div class="serie-detail-content">
+                    <h1>The Walking Dead</h1>
+                    <p class="serie-meta">11 Temporadas / 177 Episodios</p>
+                    <ul class="seasons-list">
+                        <li><h5>Temporada 1</h5><p>Rick Grimes despierta en un mundo post-apocalíptico y lidera a un grupo de supervivientes.</p></li>
+                        <li><h5>Temporada 2</h5><p>El grupo se refugia en la granja de Hershel, pero la paz es frágil.</p></li>
+                        <li><h5>Temporada 3</h5><p>Encuentran una prisión, pero deben enfrentarse a un nuevo villano: el Gobernador.</p></li>
+                        <li><h5>Temporada 4</h5><p>Una epidemia ataca la prisión y el Gobernador regresa para una batalla final.</p></li>
+                        <li><h5>Temporada 5</h5><p>Tras escapar de Terminus, el grupo encuentra la comunidad de Alexandria.</p></li>
+                        <li><h5>Temporada 6</h5><p>La vida en Alexandria es amenazada por hordas de caminantes y los Salvadores.</p></li>
+                        <li><h5>Temporada 7</h5><p>El grupo es sometido por Negan. Rick debe encontrar la fuerza para luchar.</p></li>
+                        <li><h5>Temporada 8</h5><p>La guerra total estalla entre las comunidades unidas y los Salvadores.</p></li>
+                        <li><h5>Temporada 9</h5><p>Un salto en el tiempo muestra a las comunidades intentando reconstruir la civilización y la llegada de los Susurradores.</p></li>
+                        <li><h5>Temporada 10</h5><p>La guerra contra los Susurradores se intensifica, llevando a los supervivientes a sus límites.</p></li>
+                        <li><h5>Temporada 11</h5><p>En la temporada final, el grupo se encuentra con la Commonwealth, una avanzada comunidad con oscuros secretos.</p></li>
+                    </ul>
+                </div>
+            </div>
+            <a href="temporadas.html" class="btn btn-ghost" style="margin-top: 2rem;">&larr; Volver a Todas las Series</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 The Walking Dead Fan Site. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>
